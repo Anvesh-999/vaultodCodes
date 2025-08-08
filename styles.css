@@ -1,0 +1,144 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #eef2f3, #8e9eab);
+      color: #333;
+    }
+
+    header {
+      background-color: #3f51b5;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+
+    header img {
+      margin-top: 20px;
+      height: 250px;
+      width: 200px;
+      border-radius: 15px;
+      border: 4px solid white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.05);
+    }
+
+    section {
+      background-color: #fff;
+      margin: 30px auto;
+      padding: 25px;
+      max-width: 800px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    h2 {
+      color: #3f51b5;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    li::before {
+      content: '✔️';
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    a {
+      color: #3f51b5;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #f50057;
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #303f9f;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+      animation: fadeInUp 1s ease-in;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 20px 0;
+    }
+
+    h3 {
+      margin-top: 15px;
+      font-style: italic;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (max-width: 600px) {
+      header img {
+        width: 150px;
+        height: 180px;
+      }
+
+      section, header, footer {
+        padding: 15px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+    }
