@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive Recipe Card — Chocolate Cake</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app" class="recipe-card" data-prep-minutes="45" data-total-steps="8" aria-live="polite">
+    <header class="header">
+      <h1 class="title">Chocolate Cake</h1>
+      <div class="meta">
+        <div class="meta-item" title="Preparation time">
+          <span aria-hidden="true">⏱️</span>
+          <span><strong>Prep:</strong> <span id="prepTimeText">45 mins</span></span>
+        </div>
+        <div class="meta-item" title="Servings">
+          <span aria-hidden="true">🍽️</span>
+          <span><strong>Serves:</strong> 8</span>
+        </div>
+        <div class="meta-item hide-when-print" title="Timer (optional)">
+          <span aria-hidden="true">⌛</span>
+          <span><strong>Timer:</strong> <span id="timer">00:00</span></span>
+        </div>
+      </div>
+    </header>
+
+    <figure class="hero">
+      <img src="assets/chocolate-cake.jpg" alt="A delicious, rich chocolate cake with cocoa frosting" />
+      <figcaption>Rich &amp; moist — perfect for celebrations!</figcaption>
+    </figure>
+
+    <section class="controls hide-when-print">
+      <button id="toggleIngredients" class="btn" aria-expanded="false" aria-controls="ingredients">Show Ingredients</button>
+      <button id="toggleSteps" class="btn" aria-expanded="true" aria-controls="steps">Hide Steps</button>
+      <button id="startCooking" class="btn primary">Start Cooking</button>
+      <button id="nextStep" class="btn" disabled>Next Step</button>
+      <button id="reset" class="btn ghost">Reset</button>
+      <button id="printRecipe" class="btn ghost">Print</button>
+    </section>
+
+    <section id="ingredients" class="panel collapsed" aria-hidden="true">
+      <h2>Ingredients</h2>
+      <ul class="fancy-list">
+        <li>1 ¾ cups (220g) all-purpose flour</li>
+        <li>1 ½ cups (300g) granulated sugar</li>
+        <li>¾ cup (75g) unsweetened cocoa powder</li>
+        <li>1 ½ tsp baking powder</li>
+        <li>1 ½ tsp baking soda</li>
+        <li>1 tsp salt</li>
+        <li>2 large eggs, room temperature</li>
+        <li>1 cup (240ml) milk</li>
+        <li>½ cup (120ml) vegetable oil</li>
+        <li>2 tsp vanilla extract</li>
+        <li>1 cup (240ml) boiling water</li>
+      </ul>
+    </section>
+
+    <section id="steps" class="panel" aria-hidden="false">
+      <h2>Steps</h2>
+      <ol class="steps-list" id="stepsList">
+        <li>Preheat oven to 175°C (350°F). Grease and line two 9-inch pans.</li>
+        <li>Whisk dry ingredients: flour, sugar, cocoa, baking powder, baking soda, and salt.</li>
+        <li>Beat in eggs, milk, oil, and vanilla until smooth.</li>
+        <li>Carefully mix in boiling water (batter will be thin).</li>
+        <li>Divide batter evenly into pans.</li>
+        <li>Bake for 30–35 minutes, until a skewer comes out clean.</li>
+        <li>Cool in pans 10 minutes, then transfer to a rack.</li>
+        <li>Frost and decorate as you like.</li>
+      </ol>
+    </section>
+
+    <section class="progress-area hide-when-print" aria-label="Progress">
+      <div class="progress-header">
+        <span id="progressLabel">Progress: 0% (Step 0 of 8)</span>
+      </div>
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="bar" id="progressBar"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Tip: Click “Start Cooking” to highlight steps in order. Use “Next Step” to advance. Toggle sections to focus.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
