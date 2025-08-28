@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editkaro.in | Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Editkaro.in</h1>
+    <nav>
+      <ul>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>We Edit. You Grow.</h2>
+  </section>
+
+  <div class="filter-buttons">
+    <button class="active" onclick="filterVideos('all', this)">All</button>
+    <button onclick="filterVideos('short', this)">Short-form</button>
+    <button onclick="filterVideos('long', this)">Long-form</button>
+    <button onclick="filterVideos('gaming', this)">Gaming</button>
+    <button onclick="filterVideos('football', this)">Football</button>
+    <button onclick="filterVideos('ads', this)">Ads</button>
+  </div>
+
+  <section id="portfolio" class="portfolio">
+    <div class="portfolio-item short" onclick="openVideo('assets/videos/short1.mp4')">
+      <img src="assets/thumbnails/short1.jpg" alt="Short-form Video">
+      <div class="overlay">Short-form Video</div>
+    </div>
+    <div class="portfolio-item long" onclick="openVideo('assets/videos/long1.mp4')">
+      <img src="assets/thumbnails/long1.jpg" alt="Long-form Video">
+      <div class="overlay">Long-form Video</div>
+    </div>
+    <div class="portfolio-item gaming" onclick="openVideo('assets/videos/gaming1.mp4')">
+      <img src="assets/thumbnails/gaming1.jpg" alt="Gaming Edit">
+      <div class="overlay">Gaming Edit</div>
+    </div>
+    <div class="portfolio-item football" onclick="openVideo('assets/videos/football1.mp4')">
+      <img src="assets/thumbnails/football1.jpg" alt="Football Edit">
+      <div class="overlay">Football Edit</div>
+    </div>
+    <div class="portfolio-item ads" onclick="openVideo('assets/videos/ad1.mp4')">
+      <img src="assets/thumbnails/ad1.jpg" alt="E-commerce Ad">
+      <div class="overlay">E-commerce Ad</div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>Editkaro.in is a social media marketing and video editing agency specializing in creative short-form, long-form, gaming, football, ads, and much more.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required><br>
+      <input type="email" placeholder="Your Email" required><br>
+      <textarea rows="4" placeholder="Message"></textarea><br>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Editkaro.in | All Rights Reserved</p>
+  </footer>
+
+  <div id="lightbox" class="lightbox">
+    <video id="lightboxVideo" controls autoplay></video>
+    <button onclick="closeVideo()">Close</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
